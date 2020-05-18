@@ -1,0 +1,37 @@
+.login-parent {
+    margin-top: 10vh;
+    height: 70vh;
+    width: 50%;
+    margin-left: auto;
+    margin-right: 25%;
+    display: flex;
+}
+
+.submit-button{
+    color: #ffffff;
+    background-color: #31a845;
+    width: 100%;
+    margin-top: 5vh;
+    
+}
+
+.login-name {
+    background-color: #31a845;
+    height: 70vh;
+    width: 40%;
+    display: flex;
+    text-align: center;
+}
+
+.title-login{
+    margin: auto;
+    color: white;
+}
+
+.login-form {
+    width: 60%;
+    height: 70vh;
+    border: 3px solid #31a845;
+    padding: 11.85%;
+}
+
