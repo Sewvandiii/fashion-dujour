@@ -7,3 +7,9 @@
 .r{
     float: left !important
 }
+
+.navbar-brand{
+    font-family: cursive;
+    font-weight: 500;
+    
+}

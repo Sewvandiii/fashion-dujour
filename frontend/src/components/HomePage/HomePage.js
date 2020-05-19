@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './HomePageStyles.css'
 
 export class HomePage extends Component {
 
@@ -27,19 +28,24 @@ export class HomePage extends Component {
     render() {
         return (
             <div className={"container"}>
-                <h1>Browse Categories</h1>
+                <br></br>
+                <div className={"justify-content-center"} >
+                    <h1 className='rr'>Categories</h1>
+                </div>
+                <br></br>
                 {this.state.categories.map((value, key) => (
 
-                    <div className={"box m-2 md-8 p-3 m-2 bg-dark justify-content-center"} >
+                 
+                        <div className={"box m-2 md-8 p-3 m-3 bg-success justify-content-center"} >
 
-                        <div className="row pt-5 pb-5 justify-content-center">
+                            <div className="row pt-5 pb-5 justify-content-center">
 
-                    
-                            <h3 className={"text-white"}>{value.categoryName}</h3>
+                                <h3 className="g">{value.categoryName}</h3>
+                               
+                            </div>
 
                         </div>
-
-                    </div>
+                    
                 ))}
 
             </div>

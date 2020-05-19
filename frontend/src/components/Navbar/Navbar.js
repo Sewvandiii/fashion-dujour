@@ -21,9 +21,7 @@ class Navbar extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <div className="r">
-                <Link to="/dashboard">
-                        <button className="btn btn-success mr-2" type="submit">Admin Dashboard</button>
-                    </Link>
+               
                     </div>
                 <div className="navbar-buttons ml-auto">
                     <Link to="/login">
