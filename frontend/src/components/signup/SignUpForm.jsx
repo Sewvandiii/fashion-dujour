@@ -6,11 +6,11 @@ class SignUpForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      adminname: '',
-      companyname: '',
-      email: '',
-      pw: '',
-      confpw: ''
+      managerName: '',
+      companyName: '',
+      managerEmail: '',
+      password: '',
+      conPassword: '',
     }
   }
 
@@ -21,13 +21,54 @@ class SignUpForm extends Component {
     })
   }
 
-  formSubmitHandler = e => {
-    if(this.state.pw !== this.state.confpw){
-      alert("Password Mismatch!")
-      return
+  
+  formSubmitHandler = (e) => {
+    console.log(this.state.managerName);
+    console.log(this.state.companyName);
+    console.log(this.state.managerEmail);
+    console.log(this.state.password);
+    console.log(this.state.conPassword);
+    if(this.state.managerName == null && this.state.companyName == null && this.state.managerEmail == null && this.state.password == null && this.state.conPassword == null){
+      return alert("Cannot submit empty fields")
     }
-    alert(JSON.stringify(this.state))
-  }
+    fetch('http://localhost:5000/manager', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        'managerName': this.state.managerName,
+        'companyName': this.state.companyName,
+        'managerEmail': this.state.managerEmail,
+        'password': this.state.password,
+        'conPassword': this.state.conPassword,
+      })
+    })
+    .then(function(callback) {
+      console.log(callback.json())
+      alert("Submitted Successfully!");
+    })
+    .catch(error => {
+      console.log(error)
+    })
+    e.preventDefault()
+    this.setState({
+      managerName: '',
+      companyName: '',
+      managerEmail: '',
+      password: '',
+      conPassword: ''
+    })
+  }/////
+
+  // formSubmitHandler = e => {
+  //   if(this.state.pw !== this.state.confpw){
+  //     alert("Password Mismatch!")
+  //     return
+  //   }
+  //   alert(JSON.stringify(this.state))
+  // }
 
   render () {
     
@@ -43,9 +84,9 @@ class SignUpForm extends Component {
             <input
               type='text'
               onChange={this.inputChangeHandler}
-              name='adminname'
+              name='managerName'
               className='form-control'
-              value={this.state.adminname}
+              value={this.state.managerName}
               required
             />
           </div>
@@ -55,9 +96,9 @@ class SignUpForm extends Component {
             <input
               type='text'
               onChange={this.inputChangeHandler}
-              name='companyname'
+              name='companyName'
               className='form-control'
-              value={this.state.companyname}
+              value={this.state.companyName}
               aria-describedby='emailHelp'
               required
             />
@@ -65,11 +106,11 @@ class SignUpForm extends Component {
           <div className='form-group'>
             <label htmlFor='exampleInputEmail1'>Store Manager Email</label>
             <input
-              name='email'
+              name='managerEmail'
               type='email'
               onChange={this.inputChangeHandler}
               className='form-control'
-              value={this.state.email}
+              value={this.state.managerEmail}
               required
             />
           </div>
@@ -77,23 +118,23 @@ class SignUpForm extends Component {
             <label htmlFor='exampleInputPassword1'>Password</label>
             <input
               type='password'
-              name='pw'
+              name='password'
               onChange={this.inputChangeHandler}
               className='form-control'
               id='exampleInputPassword1'
-              value={this.state.pw}
+              value={this.state.password}
               required
             />
           </div>
           <div className='form-group'>
             <label htmlFor='exampleInputPassword1'>Confirm Password</label>
             <input
-              name='confpw'
+              name='conPassword'
               type='password'
               onChange={this.inputChangeHandler}
               className='form-control'
               id='exampleInputPassword1'
-              value={this.state.confpw}
+              value={this.state.conPassword}
               required
             />
           </div>

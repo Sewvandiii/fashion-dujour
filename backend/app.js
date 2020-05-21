@@ -21,9 +21,11 @@ app.use(bodyParser.urlencoded({
 
 //Import Routes
 const usersRoute = require('./routes/users');
+const managerRoute = require('./routes/manager');
 
 //Use Routes
 app.use('/users', usersRoute);
+app.use('/manager', managerRoute);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
