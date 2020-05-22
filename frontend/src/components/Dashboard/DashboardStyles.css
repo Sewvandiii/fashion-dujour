@@ -2,7 +2,7 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .a{
-    font-size: large;
+    font-size: 50%;
     color: rgb(255, 255, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: italic;
@@ -20,10 +20,10 @@
 
 .card-body{
    
-    background-color: #64ce1d;
+    background-color: #31a845;
     border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 23%;
+  border: 2px solid #31a845;
+  padding: 25%;
     
 }
 

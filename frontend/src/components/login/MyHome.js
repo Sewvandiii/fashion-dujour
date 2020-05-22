@@ -7,7 +7,7 @@ import Add from "../Add/Add"
 import Edit from '../Edit/Edit'
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, useLocation } from "react-router-dom";
 import HomePage from '../HomePage/HomePage';
-
+import swal from 'sweetalert';
 
 export default class MyHome extends Component {
     render() {
@@ -85,18 +85,19 @@ function AuthButton() {
     return fakeAuth.isAuthenticated ? (
 
         <div className={"row justify-content-center bg-success p-2"}>
-            <label className={"text-white"}>You are now logged in...</label>
+            <label className={"text-white mr-5"}>You are now logged in...</label>
         
             <button className={"btn btn-warning"}
                 onClick={() => {
                     fakeAuth.signOut(() => history.push("/home"));
-
+                    
 
                 }}
+                
             ><i className="fa fa-send"></i>&nbsp;
                 Sign out
                   </button>
-
+                 
         </div>
     ) : (
             <div>

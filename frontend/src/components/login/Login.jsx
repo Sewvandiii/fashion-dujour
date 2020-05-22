@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './loginStyles.css'
-import  {fakeAuth} from "./MyHome"
-
+import { fakeAuth } from "./MyHome"
+import swal from 'sweetalert';
 
 class Login extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       email: '',
@@ -22,27 +22,27 @@ class Login extends Component {
 
     this.setState({
       [name]: value
-      
+
     })
   }
 
   onClickLoginFn = () => {
-  if (this.state.email==="admin@gmail.com" && this.state.password==="123"){
-    
-    //////////////////
-    console.log("onClickLoginFn called");
-    fakeAuth.isAuthenticated = true;
-    this.setState({
-      ...this.state.loginFunction
-  }, this.props.loginFunc)
-    /////////////////  
+    if (this.state.email === "admin@gmail.com" && this.state.password === "123") {
+
+      //////////////////
+      console.log("onClickLoginFn called");
+      fakeAuth.isAuthenticated = true;
+      this.setState({
+        ...this.state.loginFunction
+      }, this.props.loginFunc)
+      /////////////////  
+      swal("Logged in successfully!", "No warnings!", "success");
+    }
 
   }
-  
-  }
 
 
-  render () {
+  render() {
     return (
       <div className='login-parent'>
         <div className='login-name'>
@@ -76,11 +76,10 @@ class Login extends Component {
               />
             </div>
 
-            
             <button type='button' className='submit-button' onClick={() => this.onClickLoginFn()}>
               Login
             </button>
-            
+
           </form>
         </div>
       </div>

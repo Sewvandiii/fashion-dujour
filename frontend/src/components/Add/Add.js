@@ -2,15 +2,19 @@
 import React, { Component } from 'react'
 import './AddStyles.css'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert';
 
-class Add extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      catid: '',
-      catname: ''
-    }
-  }
+const initialState = {
+  catid: '',
+  catname: '',
+  iderror: '',
+  nameerror: ''
+}
+
+class Add extends React.Component {
+
+  state = initialState;
+
 
   onChangeHandler = e => {
     const { name, value } = e.target
@@ -20,12 +24,44 @@ class Add extends Component {
     })
   }
 
-  onSubmitHandler = (e) => {
-    console.log(this.state.catid);
-    console.log(this.state.catname);
-    if(this.state.catid == null && this.state.catname == null){
-      return alert("Cannot submit empty fields")
+  validate = () => {
+    let iderror = "";
+    let nameerror = "";
+
+    if (!this.state.catid) {
+      iderror = "Enter Category Id";
     }
+
+    if (!this.state.catname) {
+      nameerror = "Enter Category Name";
+    }
+
+    if (iderror || nameerror) {
+      this.setState({ iderror, nameerror });
+      return false;
+    }
+    swal("Category Added Successfully!", "No warnings! ", "success");
+    return true;
+  };
+
+
+  onSubmitHandler = (e) => {
+
+    const isValid = this.validate();
+    if (isValid) {
+      console.log(this.state.catid);
+      console.log(this.state.catname);
+
+
+      //clear form
+      this.setState(initialState);
+    }
+
+
+
+    // if(this.state.catid == null && this.state.catname == null){
+    //   return alert("Cannot submit empty fields")
+    // }
     fetch('http://localhost:5000/users', {
       method: 'POST',
       headers: {
@@ -37,23 +73,26 @@ class Add extends Component {
         'catname': this.state.catname
       })
     })
-    .then(function(callback) {
-      console.log(callback.json())
-      alert("Submitted Successfully!");
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(function (callback) {
+        console.log(callback.json())
+
+      })
+      .catch(error => {
+        console.log(error)
+      })
     e.preventDefault()
     this.setState({
+
       catid: '',
       catname: ''
     })
+
+
   }
 
 
 
-  render () {
+  render() {
     return (
       <div className='container'>
         <div className='containr text-center'>
@@ -78,6 +117,9 @@ class Add extends Component {
                 value={this.state.catid}
                 required
               />
+              <div style={{ fontSize: 12, color: "green" }}>
+                {this.state.iderror}
+              </div>
             </div>
             <div className='form-group'>
               <label htmlFor='exampleInputPassword1'>Category Name</label>
@@ -89,17 +131,21 @@ class Add extends Component {
                 value={this.state.catname}
                 required
               />
+              <div style={{ fontSize: 12, color: "green" }}>
+                {this.state.nameerror}
+              </div>
             </div>
+
             <br></br>
-          <br></br>
+            <br></br>
             <div className="form-group">
               <button className="btn btn-success" onClick={this.onSubmitHandler}>
-              <i className="fa fa-send"></i>&nbsp;
+                <i className="fa fa-send"></i>&nbsp;
                 Submit
               </button>
               <Link to="/dashboard">
                 <button className="btn btn-warning ml-2">
-                <i className="fa fa-arrow-left"></i>&nbsp;
+                  <i className="fa fa-arrow-left"></i>&nbsp;
                   Back to Dashboard
                 </button>
               </Link>

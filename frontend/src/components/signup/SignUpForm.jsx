@@ -1,18 +1,23 @@
 import React, { Component } from 'react'
 import './signupStyles.css'
+import swal from 'sweetalert';
 
+const initialState = {
+  managerName: '',
+  companyName: '',
+  managerEmail: '',
+  password: '',
+  conPassword: '',
+  mnameerror: '',
+  cnameerror: '',
+  memailerror: '',
+  passworderror: '',
+  conpassworderror: '',
+}
 
 class SignUpForm extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      managerName: '',
-      companyName: '',
-      managerEmail: '',
-      password: '',
-      conPassword: '',
-    }
-  }
+
+  state = initialState;
 
   inputChangeHandler = e => {
     const { name, value } = e.target
@@ -21,16 +26,57 @@ class SignUpForm extends Component {
     })
   }
 
-  
+  validate = () => {
+    let mnameerror = "";
+    let cnameerror = "";
+    let memailerror = "";
+    let passworderror = "";
+    let conpassworderror = "";
+
+    if (!this.state.managerName) {
+      mnameerror = "Enter Store Manager Name";
+    }
+
+    if (!this.state.companyName) {
+      cnameerror = "Enter Company Name";
+    }
+
+    if (!this.state.password) {
+      passworderror = "Enter Password";
+    }
+
+    if (!this.state.conPassword) {
+      conpassworderror = "Confirm Password";
+    }
+
+    if (mnameerror || cnameerror || passworderror || conpassworderror) {
+      this.setState({ mnameerror, cnameerror, passworderror, conpassworderror });
+      return false;
+    }
+    swal("Category Added Successfully!", "No warnings! ", "success");
+    return true;
+  };
+
   formSubmitHandler = (e) => {
+    const isValid = this.validate();
+    if (isValid) {
     console.log(this.state.managerName);
     console.log(this.state.companyName);
     console.log(this.state.managerEmail);
     console.log(this.state.password);
     console.log(this.state.conPassword);
-    if(this.state.managerName == null && this.state.companyName == null && this.state.managerEmail == null && this.state.password == null && this.state.conPassword == null){
+      //clear form
+      this.setState(initialState);
+    }
+
+    if (this.state.managerName == null && this.state.companyName == null && this.state.managerEmail == null && this.state.password == null && this.state.conPassword == null) {
       return alert("Cannot submit empty fields")
     }
+    if (this.state.password !== this.state.conPassword) {
+      alert("Password Mismatch!")
+      return
+    }
+    alert(JSON.stringify(this.state))
     fetch('http://localhost:5000/manager', {
       method: 'POST',
       headers: {
@@ -45,13 +91,13 @@ class SignUpForm extends Component {
         'conPassword': this.state.conPassword,
       })
     })
-    .then(function(callback) {
-      console.log(callback.json())
-      alert("Submitted Successfully!");
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(function (callback) {
+        console.log(callback.json())
+        alert("Submitted Successfully!");
+      })
+      .catch(error => {
+        console.log(error)
+      })
     e.preventDefault()
     this.setState({
       managerName: '',
@@ -60,92 +106,97 @@ class SignUpForm extends Component {
       password: '',
       conPassword: ''
     })
-  }/////
+  }
 
-  // formSubmitHandler = e => {
-  //   if(this.state.pw !== this.state.confpw){
-  //     alert("Password Mismatch!")
-  //     return
-  //   }
-  //   alert(JSON.stringify(this.state))
-  // }
+  render() {
 
-  render () {
-    
     return (
-   
-      <div>        
-      <div className='container'>
-        <form onSubmit={this.formSubmitHandler}>
-      
-          <div className='form-group'>
-            
-            <label>Store Manager Name</label>
-            <input
-              type='text'
-              onChange={this.inputChangeHandler}
-              name='managerName'
-              className='form-control'
-              value={this.state.managerName}
-              required
-            />
-          </div>
 
-          <div className='form-group'>
-            <label htmlFor='exampleInputEmail1'>Company Name</label>
-            <input
-              type='text'
-              onChange={this.inputChangeHandler}
-              name='companyName'
-              className='form-control'
-              value={this.state.companyName}
-              aria-describedby='emailHelp'
-              required
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='exampleInputEmail1'>Store Manager Email</label>
-            <input
-              name='managerEmail'
-              type='email'
-              onChange={this.inputChangeHandler}
-              className='form-control'
-              value={this.state.managerEmail}
-              required
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='exampleInputPassword1'>Password</label>
-            <input
-              type='password'
-              name='password'
-              onChange={this.inputChangeHandler}
-              className='form-control'
-              id='exampleInputPassword1'
-              value={this.state.password}
-              required
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='exampleInputPassword1'>Confirm Password</label>
-            <input
-              name='conPassword'
-              type='password'
-              onChange={this.inputChangeHandler}
-              className='form-control'
-              id='exampleInputPassword1'
-              value={this.state.conPassword}
-              required
-            />
-          </div>
-          <br></br>
-          <button type='submit' className='btn-submit'>
-            Submit
+      <div>
+        <div className='container'>
+          <form onSubmit={this.formSubmitHandler}>
+
+            <div className='form-group'>
+
+              <label>Store Manager Name</label>
+              <input
+                type='text'
+                onChange={this.inputChangeHandler}
+                name='managerName'
+                className='form-control'
+                value={this.state.managerName}
+                required
+              />
+              <div style={{ fontSize: 12, color: "green" }}>
+                {this.state.mnameerror}
+              </div>
+            </div>
+
+            <div className='form-group'>
+              <label htmlFor='exampleInputEmail1'>Company Name</label>
+              <input
+                type='text'
+                onChange={this.inputChangeHandler}
+                name='companyName'
+                className='form-control'
+                value={this.state.companyName}
+                aria-describedby='emailHelp'
+                required
+              />
+              <div style={{ fontSize: 12, color: "green" }}>
+                {this.state.cnameerror}
+              </div>
+            </div>
+            <div className='form-group'>
+              <label htmlFor='exampleInputEmail1'>Store Manager Email</label>
+              <input
+                name='managerEmail'
+                type='email'
+                onChange={this.inputChangeHandler}
+                className='form-control'
+                value={this.state.managerEmail}
+                required
+              />
+
+            </div>
+            <div className='form-group'>
+              <label htmlFor='exampleInputPassword1'>Password</label>
+              <input
+                type='password'
+                name='password'
+                onChange={this.inputChangeHandler}
+                className='form-control'
+                id='exampleInputPassword1'
+                value={this.state.password}
+                required
+              />
+              <div style={{ fontSize: 12, color: "green" }}>
+                {this.state.passworderror}
+              </div>
+            </div>
+            <div className='form-group'>
+              <label htmlFor='exampleInputPassword1'>Confirm Password</label>
+              <input
+                name='conPassword'
+                type='password'
+                onChange={this.inputChangeHandler}
+                className='form-control'
+                id='exampleInputPassword1'
+                value={this.state.conPassword}
+                required
+              />
+              <div style={{ fontSize: 12, color: "green" }}>
+                {this.state.conpassworderror}
+              </div>
+            </div>
+            <br></br>
+            <button type='submit' className='btn-submit'>
+              Submit
           </button>
-        </form>
+          </form>
+        </div>
       </div>
-      </div>
-     
+
     )
   }
 }

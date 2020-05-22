@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import './EditStyles.css'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert';
 
 class Edit extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       catid: '',
@@ -26,7 +27,7 @@ class Edit extends Component {
 
   search = (e) => {
     let keyword = this.state.search;
-    if(keyword === ''){
+    if (keyword === '') {
       return alert("Please enter an ID")
     }
     fetch('http://localhost:5000/users/search', {
@@ -40,26 +41,42 @@ class Edit extends Component {
         'catname': ''
       })
     })
-    .then(callback => callback.json())
-    .then(callbackJson => {
-      this.setState({
-        catid: callbackJson[0].categoryId,
-        catname: callbackJson[0].categoryName
-      },
-      function (){}
-      )
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(callback => callback.json())
+      .then(callbackJson => {
+        this.setState({
+          catid: callbackJson[0].categoryId,
+          catname: callbackJson[0].categoryName
+        },
+          function () { }
+        )
+      })
+      .catch(error => {
+        console.log(error)
+      })
     e.preventDefault();
-  }  
+  }
 
   delete = (e) => {
     let deleteDoc = this.state.catid;
-    if(deleteDoc === ''){
+    if (deleteDoc === '') {
       return alert("Specify an entry!")
     }
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Category has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      })
 
     fetch('http://localhost:5000/users/delete', {
       method: 'POST',
@@ -72,24 +89,24 @@ class Edit extends Component {
         'catname': ''
       })
     })
-    .then(callback => callback.json())
-    .then(callbackJson => {
-      alert("Entry Deleted Successfully!")
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(callback => callback.json())
+      .then(callbackJson => {
+
+      })
+      .catch(error => {
+        console.log(error)
+      })
     e.preventDefault();
     this.setState({
       catid: '',
       catname: ''
     })
-  }  
+  }
 
 
   update = (e) => {
     let updateDoc = this.state.catid;
-    if(updateDoc === ''){
+    if (updateDoc === '') {
       return alert("Please specify an ID")
     }
     fetch('http://localhost:5000/users/update', {
@@ -103,13 +120,13 @@ class Edit extends Component {
         'catname': this.state.catname
       })
     })
-    .then(callback => callback.json())
-    .then(callbackJson => {
-      alert("Entry Updated Successfully!")
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(callback => callback.json())
+      .then(callbackJson => {
+        swal("Category has been updated!", "No warnings!", "success");
+      })
+      .catch(error => {
+        console.log(error)
+      })
     e.preventDefault()
     this.setState({
       catid: '',
@@ -117,7 +134,7 @@ class Edit extends Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <div className='container'>
         <div className='containr text-center'>
@@ -179,26 +196,29 @@ class Edit extends Component {
               />
             </div>
             <br></br>
-          <br></br>
+            <br></br>
             <div className="form-group">
               <button className="btn btn-success" onClick={this.update}>
-              <i className="fa fa-edit"></i>&nbsp;
+                <i className="fa fa-edit"></i>&nbsp;
                 Update
               </button>
               <button className="btn btn-success ml-2" onClick={this.delete}>
-              <i className="fa fa-trash"></i>&nbsp;
+                <i className="fa fa-trash"></i>&nbsp;
                 Delete
               </button>
               <Link to="/dashboard">
                 <button className="btn btn-warning ml-2">
-                <i className="fa fa-arrow-left"></i>&nbsp;
+                  <i className="fa fa-arrow-left"></i>&nbsp;
                   Back to Dashboard
                 </button>
               </Link>
             </div>
           </form>
+          <br></br>
+          <br></br>
         </div>
       </div>
+
     )
   }
 }
