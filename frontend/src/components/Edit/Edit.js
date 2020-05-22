@@ -163,7 +163,7 @@ class Edit extends Component {
               />
             </div>
             <div className="form-group">
-              <button type='submit' className="btn btn-success" onClick={this.search}>
+              <button type='submit' className="btn btn-info" onClick={this.search}>
                 <i className="fa fa-search"></i> &nbsp;
                 Search
               </button>
@@ -198,16 +198,16 @@ class Edit extends Component {
             <br></br>
             <br></br>
             <div className="form-group">
-              <button className="btn btn-success" onClick={this.update}>
+              <button className="btn btn-dark" onClick={this.update}>
                 <i className="fa fa-edit"></i>&nbsp;
                 Update
               </button>
-              <button className="btn btn-success ml-2" onClick={this.delete}>
+              <button className="btn btn-dark ml-2" onClick={this.delete}>
                 <i className="fa fa-trash"></i>&nbsp;
                 Delete
               </button>
               <Link to="/dashboard">
-                <button className="btn btn-warning ml-2">
+                <button className="btn btn-info ml-2">
                   <i className="fa fa-arrow-left"></i>&nbsp;
                   Back to Dashboard
                 </button>

@@ -10,7 +10,7 @@ class SignUp extends Component {
       <div className='e'>
         <br></br>
         <Link to="/dashboard">
-          <button className="btn btn-warning ml-2 mr-5">
+          <button className="btn btn-info ml-2 mr-5">
             <i className="fa fa-arrow-left"></i>&nbsp;
         Back to Dashboard
       </button>

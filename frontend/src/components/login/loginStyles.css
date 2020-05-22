@@ -5,18 +5,19 @@
     margin-left: auto;
     margin-right: 25%;
     display: flex;
+    background-color:#343A40;
 }
 
 .submit-button{
     color: #ffffff;
-    background-color: #31a845;
+    background-color: #17A2B8;
     width: 100%;
     margin-top: 5vh;
     
 }
 
 .login-name {
-    background-color: #31a845;
+    background-color: #17A2B8;
     height: 70vh;
     width: 40%;
     display: flex;
@@ -31,7 +32,7 @@
 .login-form {
     width: 60%;
     height: 70vh;
-    border: 3px solid #31a845;
+    border: 3px solid #17A2B8;
     padding: 11.85%;
 }
 

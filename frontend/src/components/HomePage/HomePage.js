@@ -39,9 +39,9 @@ export class HomePage extends Component {
 
                     // <div className={"box m-2 md-8 p-3 m-3 bg-success justify-content-center"} >
 
-                    //     <div className="row pt-5 pb-5 justify-content-center">
+                    // <div className="row pt-5 pb-5 justify-content-center">
 
-                    <div className="col mb-4">
+                    <div className="col mb-5 ">
                         <div className="card">
                             <div className="card-body">
                                 <h3 className="g">{value.categoryName}</h3>

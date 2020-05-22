@@ -44,14 +44,16 @@ class Login extends Component {
 
   render() {
     return (
+      
       <div className='login-parent'>
         <div className='login-name'>
           <h1 className='title-login'>LOGIN</h1>
         </div>
         <div className='login-form'>
           <form onSubmit={this.onSubmitHandler}>
+            
             <div className='form-group'>
-              <label htmlFor='exampleInputEmail1'>Admin Email</label>
+              <label htmlFor='exampleInputEmail1' className={"text-white"}>Admin Email</label>
               <input
                 name='email'
                 onChange={this.onChangeHandler}
@@ -63,8 +65,9 @@ class Login extends Component {
                 required
               />
             </div>
+            
             <div className='form-group'>
-              <label htmlFor='exampleInputPassword1'>Admin Password</label>
+              <label htmlFor='exampleInputPassword1' className={"text-white"}>Admin Password</label>
               <input
                 name='password'
                 onChange={this.onChangeHandler}
@@ -83,6 +86,7 @@ class Login extends Component {
           </form>
         </div>
       </div>
+     
     )
   }
 }

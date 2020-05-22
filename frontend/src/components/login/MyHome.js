@@ -84,10 +84,10 @@ function AuthButton() {
 
     return fakeAuth.isAuthenticated ? (
 
-        <div className={"row justify-content-center bg-success p-2"}>
+        <div className={"row justify-content-center bg-info p-2"}>
             <label className={"text-white mr-5"}>You are now logged in...</label>
         
-            <button className={"btn btn-warning"}
+            <button className={"btn btn-dark"}   
                 onClick={() => {
                     fakeAuth.signOut(() => history.push("/home"));
                     

@@ -25,7 +25,7 @@ class Navbar extends Component {
                     </div>
                 <div className="navbar-buttons ml-auto">
                     <Link to="/login">
-                        <button className="btn btn-success mr-2" type="submit"> Login</button>
+                        <button className="btn btn-info mr-2" type="submit"> Login</button>
                     </Link>
                   
                    

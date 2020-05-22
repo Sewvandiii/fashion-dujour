@@ -8,16 +8,16 @@
 
 .signup-box-name {
     width: 20%;
-    color: #18361a;
-    background-color: #31a845;
+    color: #17A2B8;
+    background-color: #343A40;
     text-align: center;
     display: flex;
 }
 
 .signup-box-name:hover {
-    background-color: #18361a;
-    color: #31a845;
-    border: 3px solid #31a845;
+    background-color: #17A2B8;
+    color: #343A40;
+    border: 3px solid #343A40;
     border-left: none;
 }
 
@@ -27,28 +27,28 @@
 
 .signup-box-form {
     width: 50%;
-    border: 3px solid #18361a;
+    border: 3px solid #17A2B8;
     padding: 5%;
     display: flex;
     justify-content: center;
 }
 
 .signup-box-form:hover .btn-submit {
-    background-color:#18361a;
-    color: #31a845;
+    background-color:#17A2B8;
+    color: #343A40;
 }
 
 
 .signup-box-form:hover {
-    color: #18361a;
-    background-color: #31a845;
-    border: 3px solid #31a845;
+    color: #17A2B8;
+    background-color: #343A40;
+    border: 3px solid #343A40;
     border-left: none;
 }
 
 .btn-submit {
     width: 100%;
-    background-color: #31a845;
+    background-color: #343A40;
 }
 
 .e{

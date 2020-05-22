@@ -117,7 +117,7 @@ class Add extends React.Component {
                 value={this.state.catid}
                 required
               />
-              <div style={{ fontSize: 12, color: "green" }}>
+              <div style={{ fontSize: 12, color: "darkblue" }}>
                 {this.state.iderror}
               </div>
             </div>
@@ -131,7 +131,7 @@ class Add extends React.Component {
                 value={this.state.catname}
                 required
               />
-              <div style={{ fontSize: 12, color: "green" }}>
+              <div style={{ fontSize: 12, color: "darkblue" }}>
                 {this.state.nameerror}
               </div>
             </div>
@@ -139,12 +139,12 @@ class Add extends React.Component {
             <br></br>
             <br></br>
             <div className="form-group">
-              <button className="btn btn-success" onClick={this.onSubmitHandler}>
+              <button className="btn btn-dark" onClick={this.onSubmitHandler}>
                 <i className="fa fa-send"></i>&nbsp;
                 Submit
               </button>
               <Link to="/dashboard">
-                <button className="btn btn-warning ml-2">
+                <button className="btn btn-info ml-2">
                   <i className="fa fa-arrow-left"></i>&nbsp;
                   Back to Dashboard
                 </button>

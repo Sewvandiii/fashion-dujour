@@ -57,7 +57,7 @@ class Dashboard extends Component {
               <h2 className='mr-4'>Add Store Managers</h2>
 
               <Link to="/signup">
-                <button className="btn btn-success" type="submit"><i className="fa fa-plus"></i>&nbsp;Add New</button>
+                <button className="btn btn-dark" type="submit"><i className="fa fa-plus"></i>&nbsp;Add New</button>
               </Link>
             </div>
             <hr></hr>
@@ -66,13 +66,13 @@ class Dashboard extends Component {
             <div className='row float-center mt-6 mb-3'>
               <h2 className='mr-4'>Categories</h2>
               <Link to="/add">
-                <button className='btn btn-success mr-1'><i className="fa fa-plus"></i>&nbsp;Add New</button>
+                <button className='btn btn-dark mr-1'><i className="fa fa-plus"></i>&nbsp;Add New</button>
               </Link>
               <Link to="/edit">
-                <button className='btn btn-success mr-1'><i className="fa fa-edit"></i>&nbsp;Edit</button>
+                <button className='btn btn-info mr-1'><i className="fa fa-edit"></i>&nbsp;Edit</button>
               </Link>
               <Link to="/edit">
-                <button className='btn btn-success'><i className="fa fa-trash"></i>&nbsp;Delete</button>
+                <button className='btn btn-dark'><i className="fa fa-trash"></i>&nbsp;Delete</button>
               </Link>
 
             </div>
