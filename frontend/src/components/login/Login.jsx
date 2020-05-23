@@ -80,7 +80,7 @@ class Login extends Component {
       
       <div className='login-parent'>
         <div className='login-name'>
-          <h1 className='title-login'>LOGIN</h1>
+          <h1 className='title-login'> <i className="fa fa-send"></i>&nbsp; LOGIN</h1>
         </div>
         <div className='login-form'>
           <form onSubmit={this.onSubmitHandler}>
@@ -114,7 +114,7 @@ class Login extends Component {
             </div>
 
             <button type='button' className='submit-button' onClick={() => this.onClickLoginFn()}>
-              Login
+            <i className="fa fa-send"></i>&nbsp;  Login
             </button>
 
           </form>
