@@ -23,7 +23,7 @@ class SignUp extends Component {
           </div>
           <div className='signup-box-name'>
 
-            <h1 className='title-text'>STORE MANAGER</h1>
+            <h1 className='title-text'><i class="fa fa-users" aria-hidden="true"></i>&nbsp;STORE MANAGER</h1>
           </div>
         </div>
       </div>

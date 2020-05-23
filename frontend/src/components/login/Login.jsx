@@ -80,7 +80,7 @@ class Login extends Component {
       
       <div className='login-parent'>
         <div className='login-name'>
-          <h1 className='title-login'> <i className="fa fa-send"></i>&nbsp; LOGIN</h1>
+          <h1 className='title-login'> <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp; LOGIN</h1>
         </div>
         <div className='login-form'>
           <form onSubmit={this.onSubmitHandler}>

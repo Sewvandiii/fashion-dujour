@@ -81,8 +81,8 @@ class Dashboard extends Component {
               <table className='table'>
                 <thead>
                   <tr>
-                    <th scope='col'>Category ID</th>
-                    <th scope='col'>Category Name</th>
+                    <th scope='col'><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&nbsp;Category ID</th>
+                    <th scope='col'><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;Category Name</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -90,7 +90,7 @@ class Dashboard extends Component {
                     <tr
                       key={key}
                     >
-                      <td>{user.categoryId}</td>
+                      <td><i class="fa fa-check-square" aria-hidden="true"></i>&nbsp;{user.categoryId}</td>
                       <td>{user.categoryName}</td>
                     </tr>
                   ))}

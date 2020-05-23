@@ -47,6 +47,7 @@
 }
 
 .btn-submit {
+    text-emphasis-color: white;
     width: 100%;
     background-color: #343A40;
 }
@@ -54,3 +55,4 @@
 .e{
     margin-left: 5%;
 }
+
