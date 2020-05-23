@@ -86,7 +86,7 @@ class Login extends Component {
           <form onSubmit={this.onSubmitHandler}>
             
             <div className='form-group'>
-              <label htmlFor='exampleInputEmail1' className={"text-white"}>Admin Email</label>
+              <label htmlFor='exampleInputEmail1' className={"text-white"}><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Admin Email</label>
               <input
                 name='adminEmail'
                 onChange={this.onChangeHandler}
@@ -101,7 +101,7 @@ class Login extends Component {
             
             <div className='form-group'>
               <label htmlFor='exampleInputPassword1' className={"text-white"}
-              >Admin Password</label>
+              ><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Admin Password</label>
               <input
                 name='adminPassword'
                 onChange={this.onChangeHandler}

@@ -107,7 +107,7 @@ class Add extends React.Component {
         <div className='container text-center mt-3'>
           <form onSubmit={this.onSubmitHandler}>
             <div className='form-group'>
-              <label className="text-left">Category ID</label>
+              <label className="text-left"><i class="fa fa-id-card" aria-hidden="true"></i>&nbsp;Category ID</label>
               <input
                 name='catid'
                 onChange={this.onChangeHandler}
@@ -122,7 +122,7 @@ class Add extends React.Component {
               </div>
             </div>
             <div className='form-group'>
-              <label htmlFor='exampleInputPassword1'>Category Name</label>
+              <label htmlFor='exampleInputPassword1'><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;Category Name</label>
               <input
                 name='catname'
                 onChange={this.onChangeHandler}
