@@ -23,11 +23,13 @@ app.use(bodyParser.urlencoded({
 const usersRoute = require('./routes/users');
 const managerRoute = require('./routes/manager');
 const adminRoute = require('./routes/admin');
+const emailRoute = require('./routes/email')
 
 //Use Routes
 app.use('/users', usersRoute);
 app.use('/manager', managerRoute);
 app.use('/admin', adminRoute);
+app.use('/email', emailRoute);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
