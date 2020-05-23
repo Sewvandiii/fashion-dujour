@@ -12,7 +12,7 @@ const initialState = {
   cnameerror: '',
   memailerror: '',
   passworderror: '',
-  conpassworderror: '',
+  conpassworderror: ''
 }
 
 class SignUpForm extends Component {
@@ -41,6 +41,10 @@ class SignUpForm extends Component {
       cnameerror = "Enter Company Name";
     }
 
+    if (!this.state.managerEmail.includes("@")) {
+      memailerror = "Invalid Email";
+    }
+
     if (!this.state.password) {
       passworderror = "Enter Password";
     }
@@ -49,11 +53,11 @@ class SignUpForm extends Component {
       conpassworderror = "Confirm Password";
     }
 
-    if (mnameerror || cnameerror || passworderror || conpassworderror) {
-      this.setState({ mnameerror, cnameerror, passworderror, conpassworderror });
+    if (mnameerror || cnameerror || memailerror || passworderror || conpassworderror) {
+      this.setState({ mnameerror, cnameerror, memailerror, passworderror, conpassworderror });
       return false;
     }
-    swal("Category Added Successfully!", "No warnings! ", "success");
+    swal("Store Manager Added Successfully!", "No warnings! ", "success");
     return true;
   };
 
@@ -76,6 +80,7 @@ class SignUpForm extends Component {
       alert("Password Mismatch!")
       return
     }
+
     alert(JSON.stringify(this.state))
     fetch('http://localhost:5000/manager', {
       method: 'POST',
@@ -93,7 +98,7 @@ class SignUpForm extends Component {
     })
       .then(function (callback) {
         console.log(callback.json())
-        alert("Submitted Successfully!");
+        // alert("Submitted Successfully!");
       })
       .catch(error => {
         console.log(error)
