@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './HomePageStyles.css'
 
+
 export class HomePage extends Component {
 
     constructor(props) {
@@ -31,9 +32,12 @@ export class HomePage extends Component {
             <div className={"container"}>
                 <br></br>
                 <div className={"justify-content-center"} >
-                    <h1 className='rr'>Categories</h1>
+                    <h1 className='rr'><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;Categories</h1>
                 </div>
                 <br></br>
+                <br></br>
+                
+             
                 {this.state.categories.map((value, key) => (
 
 
@@ -41,6 +45,7 @@ export class HomePage extends Component {
 
                     // <div className="row pt-5 pb-5 justify-content-center">
 
+                  
                     <div className="col mb-5 ">
                         <div className="card">
                             <div className="card-body">

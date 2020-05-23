@@ -123,7 +123,7 @@ class SignUpForm extends Component {
 
             <div className='form-group'>
 
-              <label>Store Manager Name</label>
+              <label><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Store Manager Name</label>
               <input
                 type='text'
                 onChange={this.inputChangeHandler}
@@ -138,7 +138,7 @@ class SignUpForm extends Component {
             </div>
 
             <div className='form-group'>
-              <label htmlFor='exampleInputEmail1'>Company Name</label>
+              <label htmlFor='exampleInputEmail1'><i class="fa fa-building" aria-hidden="true"></i>&nbsp;Company Name</label>
               <input
                 type='text'
                 onChange={this.inputChangeHandler}
@@ -153,7 +153,7 @@ class SignUpForm extends Component {
               </div>
             </div>
             <div className='form-group'>
-              <label htmlFor='exampleInputEmail1'>Store Manager Email</label>
+              <label htmlFor='exampleInputEmail1'><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Store Manager Email</label>
               <input
                 name='managerEmail'
                 type='email'
@@ -165,7 +165,7 @@ class SignUpForm extends Component {
 
             </div>
             <div className='form-group'>
-              <label htmlFor='exampleInputPassword1'>Password</label>
+              <label htmlFor='exampleInputPassword1'><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Password</label>
               <input
                 type='password'
                 name='password'
@@ -180,7 +180,7 @@ class SignUpForm extends Component {
               </div>
             </div>
             <div className='form-group'>
-              <label htmlFor='exampleInputPassword1'>Confirm Password</label>
+              <label htmlFor='exampleInputPassword1'><i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;Confirm Password</label>
               <input
                 name='conPassword'
                 type='password'

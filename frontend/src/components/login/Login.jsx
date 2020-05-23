@@ -86,7 +86,8 @@ class Login extends Component {
           <form onSubmit={this.onSubmitHandler}>
             
             <div className='form-group'>
-              <label htmlFor='exampleInputEmail1' className={"text-white"}><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Admin Email</label>
+              <label htmlFor='exampleInputEmail1' className={"text-white"}>
+                <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Admin Email</label>
               <input
                 name='adminEmail'
                 onChange={this.onChangeHandler}
