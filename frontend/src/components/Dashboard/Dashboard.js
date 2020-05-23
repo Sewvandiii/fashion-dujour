@@ -54,7 +54,7 @@ class Dashboard extends Component {
             </div>
             <br></br>
             <div className='row float-center mt-6 mb-3'>
-              <h2 className='mr-4'>Add Store Managers</h2>
+              <h2 className='mr-4'><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp;Add Store Managers</h2>
 
               <Link to="/signup">
                 <button className="btn btn-dark" type="submit"><i className="fa fa-plus"></i>&nbsp;Add New</button>
@@ -64,7 +64,7 @@ class Dashboard extends Component {
             <br></br>
             <br></br>
             <div className='row float-center mt-6 mb-3'>
-              <h2 className='mr-4'>Categories</h2>
+              <h2 className='mr-4'><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp;Categories</h2>
               <Link to="/add">
                 <button className='btn btn-dark mr-1'><i className="fa fa-plus"></i>&nbsp;Add New</button>
               </Link>
