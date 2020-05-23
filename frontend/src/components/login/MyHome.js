@@ -7,7 +7,7 @@ import Add from "../Add/Add"
 import Edit from '../Edit/Edit'
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, useLocation } from "react-router-dom";
 import HomePage from '../HomePage/HomePage';
-import swal from 'sweetalert';
+
 
 export default class MyHome extends Component {
     render() {
