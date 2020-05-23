@@ -60,7 +60,7 @@ export default class MyHome extends Component {
 
 
 
-
+//Authentication of Login
 export const fakeAuth = {
 
     isAuthenticated: false,
