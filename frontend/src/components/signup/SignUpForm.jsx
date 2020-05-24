@@ -249,8 +249,10 @@ class SignUpForm extends Component {
             <button type='submit' className='btn-submit'>
               Add Store Manager
             </button>
+            
           </form>
         </div>
+      
       </div>
     )
   }

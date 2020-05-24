@@ -15,6 +15,12 @@ class SignUp extends Component {
         Back to Dashboard
       </button>
         </Link>
+        <Link to="/manager">
+          <button className="btn btn-info ml-2 mr-5">
+            <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
+        View Store Managers
+      </button>
+        </Link>
         <div className='signup-main mt-1 mb-3 p-'>
 
           <br></br>

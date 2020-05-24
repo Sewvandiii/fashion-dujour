@@ -7,6 +7,8 @@ import Add from "../Add/Add"
 import Edit from '../Edit/Edit'
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory, useLocation } from "react-router-dom";
 import HomePage from '../HomePage/HomePage';
+import StoreManager from '../Manager/StoreManager';
+import ManagerEdit from '../StoreManagerEdit/ManagerEdit';
 
 
 export default class MyHome extends Component {
@@ -39,6 +41,16 @@ export default class MyHome extends Component {
                         <PrivateRoute path="/edit">
                             <AuthButton />
                             <Edit />
+                        </PrivateRoute>
+
+                        <PrivateRoute path="/manageredit">
+                            <AuthButton />
+                            <ManagerEdit />
+                        </PrivateRoute>
+
+                        <PrivateRoute path="/manager">
+
+                            <StoreManager />
                         </PrivateRoute>
 
 
@@ -86,18 +98,18 @@ function AuthButton() {
 
         <div className={"row justify-content-center bg-info p-2"}>
             <label className={"text-white mr-5"}>You are now logged in...</label>
-        
-            <button className={"btn btn-dark"}   
+
+            <button className={"btn btn-dark"}
                 onClick={() => {
                     fakeAuth.signOut(() => history.push("/home"));
-                    
+
 
                 }}
-                
+
             ><i className="fa fa-send"></i>&nbsp;
                 Sign out
                   </button>
-                 
+
         </div>
     ) : (
             <div>
