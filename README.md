@@ -17,7 +17,7 @@ Bootstrap CSS<br/>
 HTML<br/>  
 Nodejs<br/>  
  
-### Database 
+## Database 
 MongoDB Atlas<br/>  
 Connection url: 
 mongodb+srv://root:bunny@cluster0alh36.gcp.mongodb.net/OnlineFashionStore?retryWrites=true&w=majority 
@@ -59,6 +59,9 @@ Admin password – 123
 <img width="960" alt="7" src="https://user-images.githubusercontent.com/61576355/82754438-82c3ce80-9dea-11ea-9934-2679d38c1a09.PNG">
  
 ### Add Store Manager
+
+Once the login is created for the store manager, the store manager will be notified via e-mail. System sends an e-mail to the store manager with the login details.  
+
 <img width="960" alt="15" src="https://user-images.githubusercontent.com/61576355/82754384-337d9e00-9dea-11ea-9ebc-4f9059d9da6c.PNG">
 
 ### Update / Delete Store Manager
