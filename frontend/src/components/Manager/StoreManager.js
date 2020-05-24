@@ -35,7 +35,7 @@ export class StoreManager extends Component {
                 <Link to="/signup">
                     <button className="btn btn-info ml-2 mr-5">
                         <i className="fa fa-arrow-left"></i>&nbsp;
-                     Back to Store Managers
+                     Back to Add Store Managers
                     </button>
                 </Link>
                 <Link to="/manageredit">
@@ -46,14 +46,11 @@ export class StoreManager extends Component {
                 <div className={"justify-content-center"} >
                     <h1 className='rr'><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Store Managers</h1>
                 </div>
-
                 <br></br>
                 <br></br>
 
 
                 {this.state.managername.map((value, key) => (
-
-
 
                     <div className="col mb-5 ">
                         <div className="card">

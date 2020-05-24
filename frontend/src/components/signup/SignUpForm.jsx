@@ -69,7 +69,7 @@ class SignUpForm extends Component {
       })
       return false
     }
-    swal('Store Manager Added Successfully!', 'No warnings! ', 'success')
+   
     return true
   }
 
@@ -99,6 +99,7 @@ class SignUpForm extends Component {
       return
     }
 
+    swal('Store Manager Added Successfully!', 'No warnings! ', 'success')
     let thisState = this;
     let stateaccess = this.state;
     alert(JSON.stringify(this.state))

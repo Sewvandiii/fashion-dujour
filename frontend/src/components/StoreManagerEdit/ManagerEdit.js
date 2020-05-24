@@ -76,7 +76,7 @@ class ManagerEdit extends Component {
     })
       .then((willDelete) => {
         if (willDelete) {
-          swal("Category has been deleted!", {
+          swal("Store Manager details has been deleted!", {
             icon: "success",
           });
         } else {
@@ -134,7 +134,7 @@ class ManagerEdit extends Component {
     })
       .then(callback => callback.json())
       .then(callbackJson => {
-        swal("Category has been updated!", "No warnings!", "success");
+        swal("Store Manager details has been updated!", "No warnings!", "success");
       })
       .catch(error => {
         console.log(error)
