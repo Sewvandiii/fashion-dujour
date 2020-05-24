@@ -23,7 +23,7 @@ Admin password – 123
 <img width="960" alt="15" src="https://user-images.githubusercontent.com/61576355/82754384-337d9e00-9dea-11ea-9ebc-4f9059d9da6c.PNG">
 
 ### Update / Delete Store Manager
-<img width="960" alt="7" src="https://user-images.githubusercontent.com/61576355/82754438-82c3ce80-9dea-11ea-9934-2679d38c1a09.PNG">
+<img width="960" alt="25" src="https://user-images.githubusercontent.com/61576355/82754388-3c6e6f80-9dea-11ea-97c8-251ad4da293b.PNG">
 
 ## License
 [MIT](https://opensource.org/licenses/mit-license.html)
