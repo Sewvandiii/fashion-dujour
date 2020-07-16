@@ -52,10 +52,10 @@ Once the login is created for the store manager, the store manager will be notif
 
 ## Delpoy on Heroku
 
-## Front End
+### Front End
 https://vast-beyond-62616.herokuapp.com/home
 
-## Backend:
+### Backend:
 https://infinite-meadow-55031.herokuapp.com/
 
 ## License
