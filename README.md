@@ -1,6 +1,10 @@
 # AF-Online-Fashion-Store
 
-![MIT](https://img.shields.io/badge/Licence-MIT-orange)
+## Languages
+
+![JavaScript](https://img.shields.io/badge/Language-JavaScript-orange)
+![HTML](https://img.shields.io/badge/Language-HTML-green)
+![CSS](https://img.shields.io/badge/Language-CSS-blue)
 
 ## FASHION DU JOUR
 
@@ -23,6 +27,8 @@ Nodejs<br/>
 MongoDB Atlas<br/>  
 Connection url: 
 mongodb+srv://root:bunny@cluster0alh36.gcp.mongodb.net/OnlineFashionStore?retryWrites=true&w=majority 
+
+## Configurations
 
 ### step 1
 Open terminal in VS Code in Backend Directory 
@@ -49,7 +55,7 @@ Open http://localhost:3000 to view it in the browser.
 Admin email – admin@gmail.com 
 Admin password – 123 
 
-### Important 
+## Important 
 Once the login is created for the store manager, the store manager will be notified via e-mail. System sends an e-mail to the store manager with the login details.  
 
 ## Delpoy on Heroku
@@ -61,4 +67,4 @@ https://vast-beyond-62616.herokuapp.com/home
 https://infinite-meadow-55031.herokuapp.com/
 
 ## License
-[MIT](https://opensource.org/licenses/mit-license.html)
+![MIT](https://img.shields.io/github/license/Sewvandiii/AF-Online-Fashion-Store?color=black)
