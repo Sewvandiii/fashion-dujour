@@ -55,7 +55,7 @@ Open http://localhost:3000 to view it in the browser.
 Admin email – admin@gmail.com 
 Admin password – 123 
 
-## Important 
+## ⚠ Important 
 Once the login is created for the store manager, the store manager will be notified via e-mail. System sends an e-mail to the store manager with the login details.  
 
 ## Delpoy on Heroku
